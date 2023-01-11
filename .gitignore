@@ -1,0 +1,17 @@
+node_modules
+package-lock.json
+.DS_Store
+r
+build
+.jsbeautifyrc
+log*.log
+.Rapp.history
+.RData
+.RHistory
+.eslintrc.json
+.vscode/extensions.json
+#ignore other DB's
+database/judet_*
+database/p3wb_*
+database/p3wb-*
+database/p3wb *

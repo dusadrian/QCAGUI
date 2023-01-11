@@ -1,0 +1,85 @@
+{
+  "name": "qcagui",
+  "version": "1.0.0",
+  "description": "QCA Graphical User Interface",
+  "main": "./dist/main.js",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc -w",
+    "lint": "eslint -c .eslintrc --ext .ts ./src",
+    "start": "npm run build && electron ./dist/main.js",
+    "dist": "npm run build && electron-builder",
+    "pack": "npm run build && electron-builder --dir"
+  },
+  "repository": "https://github.com/electron/electron-quick-start-typescript",
+  "keywords": [
+    "QCA",
+    "GUI"
+  ],
+  "author": "Adrian Dusa",
+  "license": "MIT",
+  "dependencies": {
+    "@popperjs/core": "^2.11.6",
+    "@types/lodash": "^4.14.191",
+    "@types/wrap-text": "^1.0.0",
+    "dmg-builder": "^24.0.0-alpha.2",
+    "fsevents": "^2.3.2",
+    "jquery": "^3.6.3",
+    "lodash": "^4.17.21",
+    "r-integration": "^2.4.0",
+    "raphael": "^2.3.0",
+    "uuid": "^9.0.0",
+    "wrap-text": "^1.0.9",
+    "xterm": "^5.1.0"
+  },
+  "devDependencies": {
+    "@electron/rebuild": "^3.2.10",
+    "@types/jquery": "^3.5.16",
+    "@types/uuid": "^8.3.1",
+    "@typescript-eslint/eslint-plugin": "^5.47.0",
+    "@typescript-eslint/parser": "^5.47.0",
+    "electron": "^21.3.3",
+    "electron-builder": "^22.14.13",
+    "eslint": "^8.30.0",
+    "typescript": "^4.9.4"
+  },
+  "build": {
+    "appId": "qca.gui",
+    "productName": "QCAGUI",
+    "directories": {
+      "output": "build/output"
+    },
+    "extraResources": [
+      {
+        "from": "src/page/",
+        "to": "page"
+      }
+    ],
+    "mac": {
+      "category": "public.app-category.productivity",
+      "target": {
+        "target": "dmg",
+        "arch": [
+          "x64"
+        ],
+        "icon": "build/icon.icns"
+      }
+    },
+    "win": {
+      "target": {
+        "target": "nsis",
+        "arch": [
+          "x64"
+        ]
+      },
+      "icon": "build/icon.ico",
+      "legalTrademarks": "MIT Licence"
+    },
+    "linux": {
+      "target": "deb",
+      "maintainer": "RODA",
+      "icon": "build/icon.png",
+      "category": "Development / Science"
+    }
+  }
+}

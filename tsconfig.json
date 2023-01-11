@@ -1,0 +1,18 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "noImplicitAny": true,
+    "allowJs": true,
+    "sourceMap": true,
+    "outDir": "dist",
+    "baseUrl": ".",
+    "target": "ESNEXT",
+    "paths": {
+      "": ["node_modules/"]
+    },
+    "esModuleInterop": true
+  },
+  "include": [
+    "src/*/"
+  ]
+}

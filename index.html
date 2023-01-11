@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8" />
+		<title>QCA Graphical User Interface</title>
+		<meta http-equiv="Content-Security-Policy" content="script-src 'self' 'unsafe-inline';" />
+
+    <link rel="stylesheet" href="./node_modules/xterm/css/xterm.css">
+		<link href="./node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+		<style>
+
+			body {
+				font-size: 0.9rem;
+			}
+
+			.loader {
+				font-size: 3rem;
+				font-weight: 700;
+				color: #ffffff;
+				position: fixed;
+				z-index: 1050;
+				left: calc(50% - 145px);
+				top: calc(50% - 70px);
+				text-align: center;
+			}
+
+			.cover {
+				top: 0;
+				display: block;
+				position: fixed;
+				width: 100%;
+				height: 100%;
+				background-color: rgba(0, 0, 0, 0.7);
+				z-index: 1040;
+			}
+
+			@keyframes spin {
+				0% {
+					transform: rotate(0deg);
+				}
+
+				100% {
+					transform: rotate(360deg);
+				}
+			}
+
+			.stop-scrolling {
+				height: 100%;
+				overflow: hidden;
+			}
+
+
+      #xterm {
+        background-color: #f8f8f8;
+        box-sizing: border-box;
+        padding: 5px 0px 0px 5px;
+      }
+
+		</style>
+	</head>
+
+	<body style="background: white">
+		<!-- <div class="loader d-none" id="loader">Processing....</div>
+		<div class="cover d-none" id="cover"></div> -->
+		<div id="rconsole"></div>
+
+		<script src="./dist/renderer.js"></script>
+	</body>
+</html>
