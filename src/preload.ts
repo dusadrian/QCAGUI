@@ -7,11 +7,11 @@ import * as path from 'path';
 
 window.addEventListener('DOMContentLoaded', () => {
     
-    const helpers = async () => {
-        return await import('./library/helpers');
-    };
+    // const helpers = async () => {
+    //     return await import('./library/helpers');
+    // };
 
-    console.log(helpers().then(result => result.isArray("a")));
+    // console.log(helpers().then(result => result.isArray("a")));
 
     ipcRenderer.on('sendCommand-reply', (event, response) => {
         // console.log(response);
